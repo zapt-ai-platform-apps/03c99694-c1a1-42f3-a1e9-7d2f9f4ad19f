@@ -6,7 +6,7 @@ export default function StudentForm({ onCardRead }) {
   const handleCardInput = (e) => {
     const newCardNumber = e.target.value;
     setCardNumber(newCardNumber);
-    if (newCardNumber.length === 10) { // Assuming card numbers are 10 digits
+    if (newCardNumber.length === 10) {
       onCardRead(newCardNumber);
       setCardNumber('');
     }
@@ -20,6 +20,7 @@ export default function StudentForm({ onCardRead }) {
         onChange={handleCardInput}
         placeholder="Scan Student Card"
         className="w-64 p-2 border rounded box-border"
+        maxLength={10}
       />
     </div>
   );
